@@ -1,29 +1,19 @@
-
+interface EfectoAlteracion {
+    tipoEfecto: string;
+    duracion: number;
+    danioPorTurno: number;
+    prob: number;
+}
 
 class Arma{
     private _tipo: string;
     private _tipoDanio: string;
     private _danio: number;
-    private _efectoAlteracion: {
-        tipoEfecto: string;
-        duracion: number;
-        danioPorTurno: number;
-        prob: number;
-    };
-    public get efectoAlteracion(): {
-        tipoEfecto: string;
-        duracion: number;
-        danioPorTurno: number;
-        prob: number;
-    } {
+    private _efectoAlteracion: EfectoAlteracion;
+    public get efectoAlteracion(): EfectoAlteracion {
         return this._efectoAlteracion;
     }
-    public set efectoAlteracion(value: {
-        tipoEfecto: string;
-        duracion: number;
-        danioPorTurno: number;
-        prob: number;
-    }) {
+    public set efectoAlteracion(value: EfectoAlteracion) {
         this._efectoAlteracion = value;
     }
     
