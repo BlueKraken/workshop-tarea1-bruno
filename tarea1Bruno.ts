@@ -19,7 +19,7 @@ class Arma{
     }
 }
 
-class Sable extends Arma {
+export class Sable extends Arma {
     constructor(){
         super(
             dataSable.tipo,
@@ -30,7 +30,7 @@ class Sable extends Arma {
 
 }
 
-class Daga extends Arma {
+export class Daga extends Arma {
     constructor(){
         super(
             dataDaga.tipo,
@@ -41,7 +41,7 @@ class Daga extends Arma {
 
 }
 
-class Maza extends Arma {
+export class Maza extends Arma {
     constructor(){
         super(
             dataMaza.tipo,
@@ -50,8 +50,3 @@ class Maza extends Arma {
             dataMaza.efectoAlteracion);
     }
 }
-
-let miSable = new Sable();
-miSable.toString();
-//miSable.tipo = 'saable';
-miSable.toString();
