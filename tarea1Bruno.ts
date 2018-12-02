@@ -6,39 +6,19 @@ interface EfectoAlteracion {
 }
 
 class Arma{
-    private _tipo: string;
-    private _tipoDanio: string;
-    private _danio: number;
-    private _efectoAlteracion: EfectoAlteracion;
-    public get efectoAlteracion(): EfectoAlteracion {
-        return this._efectoAlteracion;
-    }
-    public set efectoAlteracion(value: EfectoAlteracion) {
-        this._efectoAlteracion = value;
-    }
+    public readonly tipo: string;
+    public readonly tipoDanio: string;
+    public readonly danio: number;
+    public readonly efectoAlteracion: EfectoAlteracion;
     
-    public get tipo(): string{
-        return this._tipo;
-    }
-    public set tipo(value: string){
-        this._tipo = value;
-        console.log('set arma');
-    }
-    public get tipoDanio(): string {
-        return this._tipoDanio;
-    }
-    public set tipoDanio(value: string) {
-        this._tipoDanio = value;
-    }
-    public get danio(): number {
-        return this._danio;
-    }
-    public set danio(value: number) {
-        this._danio = value;
+    constructor(tipo: string, tipoDanio, danio: number, efectoAlteracion: EfectoAlteracion) {
+        this.tipo = tipo;
+        this.danio = danio;
+        this.efectoAlteracion = efectoAlteracion;
     }
 
     toString(): void{
-        console.log('Arma: ' + this._tipo + '. Tipo de daño: ' + this._tipoDanio + '. Daño: ' + this._danio + '.\nEfecto: ' + (this._efectoAlteracion.prob * 100) + '% de probabilidades de causar ' + this._efectoAlteracion.tipoEfecto + ' durante ' + this._efectoAlteracion.duracion + ' turnos causando ' + this._efectoAlteracion.danioPorTurno + ' de daño por turno');
+        console.log('Arma: ' + this.tipo + '. Tipo de daño: ' + this.tipoDanio + '. Daño: ' + this.danio + '.\nEfecto: ' + (this.efectoAlteracion.prob * 100) + '% de probabilidades de causar ' + this.efectoAlteracion.tipoEfecto + ' durante ' + this.efectoAlteracion.duracion + ' turnos causando ' + this.efectoAlteracion.danioPorTurno + ' de daño por turno');
     }
 }
 
@@ -80,11 +60,11 @@ const dataMaza = {
 
 class Sable extends Arma{
     constructor(){
-        super();
-        this.tipo = dataSable.tipo;
-        this.tipoDanio = dataSable.tipoDanio;
-        this.danio = dataSable.danio;
-        this.efectoAlteracion = dataSable.efectoAlteracion;
+        super(
+            dataSable.tipo,
+            dataSable.tipoDanio,
+            dataSable.danio,
+            dataSable.efectoAlteracion);
     }
 
 }
@@ -92,27 +72,27 @@ class Sable extends Arma{
 class Daga extends Arma{
 
     constructor(){
-        super();
-        this.tipo = dataDaga.tipo;
-        this.tipoDanio = dataDaga.tipoDanio;
-        this.danio = dataDaga.danio;
-        this.efectoAlteracion = dataDaga.efectoAlteracion;
+        super(
+            dataDaga.tipo,
+            dataDaga.tipoDanio,
+            dataDaga.danio,
+            dataDaga.efectoAlteracion);
     }
 
 }
 
 class Maza extends Arma{
     constructor(){
-        super();
-        this.tipo = dataMaza.tipo;
-        this.tipoDanio = dataMaza.tipoDanio;
-        this.danio = dataMaza.danio;
-        this.efectoAlteracion = dataMaza.efectoAlteracion;
+        super(
+            dataMaza.tipo,
+            dataMaza.tipoDanio,
+            dataMaza.danio,
+            dataMaza.efectoAlteracion);
     }
 
 }
 
 let miSable = new Sable();
 miSable.toString();
-miSable.tipo = 'saable';
+//miSable.tipo = 'saable';
 miSable.toString();
