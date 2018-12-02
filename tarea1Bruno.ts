@@ -9,8 +9,8 @@ class Arma{
         public readonly efectoAlteracion: EfectoAlteracion
     ) { }
 
-    toString(): void{
-        console.log('Arma: ' + this.tipo + '. Tipo de daño: '
+    toString(): string {
+        return ('Arma: ' + this.tipo + '. Tipo de daño: '
         + this.tipoDanio + '. Daño: ' + this.danio + '.\nEfecto: '
         + (this.efectoAlteracion.prob * 100) + '% de probabilidades de causar '
         + this.efectoAlteracion.tipoEfecto + ' durante '
