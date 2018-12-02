@@ -1,7 +1,7 @@
 import { dataDaga, dataMaza, dataSable } from './datos';
 import { EfectoAlteracion } from './efectoAlteracion';
 
-class Arma{    
+class Arma {    
     constructor(
         public readonly tipo: string, 
         public readonly tipoDanio: string, 
@@ -18,7 +18,6 @@ class Arma{
 
 export class Sable extends Arma {
     constructor() {
-        const efecto = dataSable.efectoAlteracion;
         super(
             dataSable.tipo,
             dataSable.tipoDanio,
