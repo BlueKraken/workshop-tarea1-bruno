@@ -1,24 +1,25 @@
 import { dataDaga, dataMaza, dataSable } from './datos';
 import { EfectoAlteracion } from './efectoAlteracion';
 
-class Arma{
-    public readonly tipo: string;
-    public readonly tipoDanio: string;
-    public readonly danio: number;
-    public readonly efectoAlteracion: EfectoAlteracion;
-    
-    constructor(tipo: string, tipoDanio, danio: number, efectoAlteracion: EfectoAlteracion) {
-        this.tipo = tipo;
-        this.danio = danio;
-        this.efectoAlteracion = efectoAlteracion;
-    }
+class Arma{    
+    constructor(
+        public readonly tipo: string, 
+        public readonly tipoDanio: string, 
+        public readonly danio: number,
+        public readonly efectoAlteracion: EfectoAlteracion
+    ) { }
 
     toString(): void{
-        console.log('Arma: ' + this.tipo + '. Tipo de daño: ' + this.tipoDanio + '. Daño: ' + this.danio + '.\nEfecto: ' + (this.efectoAlteracion.prob * 100) + '% de probabilidades de causar ' + this.efectoAlteracion.tipoEfecto + ' durante ' + this.efectoAlteracion.duracion + ' turnos causando ' + this.efectoAlteracion.danioPorTurno + ' de daño por turno');
+        console.log('Arma: ' + this.tipo + '. Tipo de daño: '
+        + this.tipoDanio + '. Daño: ' + this.danio + '.\nEfecto: '
+        + (this.efectoAlteracion.prob * 100) + '% de probabilidades de causar '
+        + this.efectoAlteracion.tipoEfecto + ' durante '
+        + this.efectoAlteracion.duracion + ' turnos causando '
+        + this.efectoAlteracion.danioPorTurno + ' de daño por turno');
     }
 }
 
-class Sable extends Arma{
+class Sable extends Arma {
     constructor(){
         super(
             dataSable.tipo,
@@ -29,8 +30,7 @@ class Sable extends Arma{
 
 }
 
-class Daga extends Arma{
-
+class Daga extends Arma {
     constructor(){
         super(
             dataDaga.tipo,
@@ -41,7 +41,7 @@ class Daga extends Arma{
 
 }
 
-class Maza extends Arma{
+class Maza extends Arma {
     constructor(){
         super(
             dataMaza.tipo,
@@ -49,7 +49,6 @@ class Maza extends Arma{
             dataMaza.danio,
             dataMaza.efectoAlteracion);
     }
-
 }
 
 let miSable = new Sable();
