@@ -12,20 +12,19 @@ class Arma{
     toString(): string {
         return ('Arma: ' + this.tipo + '. Tipo de daño: '
         + this.tipoDanio + '. Daño: ' + this.danio + '.\nEfecto: '
-        + (this.efectoAlteracion.prob * 100) + '% de probabilidades de causar '
-        + this.efectoAlteracion.tipoEfecto + ' durante '
-        + this.efectoAlteracion.duracion + ' turnos causando '
-        + this.efectoAlteracion.danioPorTurno + ' de daño por turno');
+        + this.efectoAlteracion.toString());
     }
 }
 
 export class Sable extends Arma {
-    constructor(){
+    constructor() {
+        const efecto = dataSable.efectoAlteracion;
         super(
             dataSable.tipo,
             dataSable.tipoDanio,
             dataSable.danio,
-            dataSable.efectoAlteracion);
+            EfectoAlteracion.fromDataObject(dataSable.efectoAlteracion)
+        );
     }
 
 }
