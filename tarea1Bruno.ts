@@ -1,11 +1,5 @@
 import { dataDaga, dataMaza, dataSable } from './datos';
-
-interface EfectoAlteracion {
-    tipoEfecto: string;
-    duracion: number;
-    danioPorTurno: number;
-    prob: number;
-}
+import { EfectoAlteracion } from './efectoAlteracion';
 
 class Arma{
     public readonly tipo: string;
