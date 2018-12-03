@@ -3,7 +3,7 @@
     "main": "main.js",
     "scripts": {
         "build": "webpack",
-        "start": "npx http-server ./dist"
+        "start": "webpack-dev-server"
     },
     "devDependencies": {
         "ts-loader": "^5.3.1",
